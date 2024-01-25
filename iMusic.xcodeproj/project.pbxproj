@@ -15,6 +15,7 @@
 		50B7BD7B2B6255A100117B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B7BD792B6255A100117B6E /* LaunchScreen.storyboard */; };
 		50B7BD832B6255FB00117B6E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD822B6255FB00117B6E /* MainTabBarController.swift */; };
 		50B7BD872B6259B800117B6E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD862B6259B800117B6E /* SearchViewController.swift */; };
+		50B7BD8B2B62858B00117B6E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 50B7BD8A2B62858B00117B6E /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B7BD8B2B62858B00117B6E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = iMusic;
+			packageProductDependencies = (
+				50B7BD8A2B62858B00117B6E /* Alamofire */,
+			);
 			productName = iMusic;
 			productReference = 50B7BD6B2B62559C00117B6E /* iMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 50B7BD622B62559C00117B6E;
+			packageReferences = (
+				50B7BD892B62858B00117B6E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 50B7BD6C2B62559C00117B6E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50B7BD892B62858B00117B6E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50B7BD8A2B62858B00117B6E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50B7BD892B62858B00117B6E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50B7BD632B62559C00117B6E /* Project object */;
 }
