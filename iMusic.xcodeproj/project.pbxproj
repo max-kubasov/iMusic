@@ -16,6 +16,7 @@
 		50B7BD832B6255FB00117B6E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD822B6255FB00117B6E /* MainTabBarController.swift */; };
 		50B7BD872B6259B800117B6E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD862B6259B800117B6E /* SearchViewController.swift */; };
 		50B7BD8B2B62858B00117B6E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 50B7BD8A2B62858B00117B6E /* Alamofire */; };
+		50B7BD8D2B62B71A00117B6E /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD8C2B62B71A00117B6E /* SearchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		50B7BD7C2B6255A100117B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B7BD822B6255FB00117B6E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		50B7BD862B6259B800117B6E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		50B7BD8C2B62B71A00117B6E /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				50B7BD722B62559C00117B6E /* ViewController.swift */,
 				50B7BD822B6255FB00117B6E /* MainTabBarController.swift */,
 				50B7BD862B6259B800117B6E /* SearchViewController.swift */,
+				50B7BD8C2B62B71A00117B6E /* SearchResponse.swift */,
 				50B7BD742B62559C00117B6E /* Main.storyboard */,
 				50B7BD772B6255A100117B6E /* Assets.xcassets */,
 				50B7BD792B6255A100117B6E /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			files = (
 				50B7BD732B62559C00117B6E /* ViewController.swift in Sources */,
 				50B7BD6F2B62559C00117B6E /* AppDelegate.swift in Sources */,
+				50B7BD8D2B62B71A00117B6E /* SearchResponse.swift in Sources */,
 				50B7BD832B6255FB00117B6E /* MainTabBarController.swift in Sources */,
 				50B7BD872B6259B800117B6E /* SearchViewController.swift in Sources */,
 				50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */,
