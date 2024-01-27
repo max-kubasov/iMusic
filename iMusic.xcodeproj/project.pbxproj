@@ -28,6 +28,7 @@
 		50B7BDA12B63E71300117B6E /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDA02B63E71300117B6E /* UIViewController + Storyboard.swift */; };
 		50B7BDA52B652FCD00117B6E /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B7BDA42B652FCD00117B6E /* TrackCell.xib */; };
 		50B7BDA72B652FEF00117B6E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDA62B652FEF00117B6E /* TrackCell.swift */; };
+		50B7BDAD2B656D7F00117B6E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 50B7BDAC2B656D7F00117B6E /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B7BDAD2B656D7F00117B6E /* SDWebImage in Frameworks */,
 				50B7BD8B2B62858B00117B6E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +172,7 @@
 			name = iMusic;
 			packageProductDependencies = (
 				50B7BD8A2B62858B00117B6E /* Alamofire */,
+				50B7BDAC2B656D7F00117B6E /* SDWebImage */,
 			);
 			productName = iMusic;
 			productReference = 50B7BD6B2B62559C00117B6E /* iMusic.app */;
@@ -201,6 +204,7 @@
 			mainGroup = 50B7BD622B62559C00117B6E;
 			packageReferences = (
 				50B7BD892B62858B00117B6E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				50B7BDAB2B656D7F00117B6E /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 50B7BD6C2B62559C00117B6E /* Products */;
 			projectDirPath = "";
@@ -473,6 +477,14 @@
 				version = 5.7.0;
 			};
 		};
+		50B7BDAB2B656D7F00117B6E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -480,6 +492,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 50B7BD892B62858B00117B6E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		50B7BDAC2B656D7F00117B6E /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50B7BDAB2B656D7F00117B6E /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

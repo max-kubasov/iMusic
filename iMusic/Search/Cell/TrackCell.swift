@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol TrackCellViewModel {
     var iconUrlString: String? { get }
