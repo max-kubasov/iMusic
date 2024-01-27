@@ -14,54 +14,56 @@ import UIKit
 
 protocol SearchDisplayLogic: class
 {
-  func displaySomething(viewModel: Search.Something.ViewModel)
+    func displaySomething(viewModel: Search.Something.ViewModel)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic
 {
-  var interactor: SearchBusinessLogic?
-  var router: (NSObjectProtocol & SearchRoutingLogic & SearchDataPassing)?
-
+    var interactor: SearchBusinessLogic?
+    var router: (NSObjectProtocol & SearchRoutingLogic & SearchDataPassing)?
+    
     
     @IBOutlet weak var table: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = SearchInteractor()
-    let presenter = SearchPresenter()
-    let router = SearchRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    private var searchViewModel = SearchViewModel.init(cells: [])
+    private var timer: Timer?
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = SearchInteractor()
+        let presenter = SearchPresenter()
+        let router = SearchRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
     }
-  }
-  
-  // MARK: View lifecycle
-  
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setup()
-        doSomething()
+        //doSomething()
         setupSearchBar()
         setupTableView()
     }
@@ -75,21 +77,26 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     private func setupTableView() {
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
     }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = Search.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Search.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    
+//    func doSomething()
+//    {
+//        let request = Search.Something.Request()
+//        interactor?.doSomething(request: request)
+//    }
+    
+    func displaySomething(viewModel: Search.Something.ViewModel)
+    {
+        print("ViewModel -----------")
+        
+        self.searchViewModel = viewModel.searchViewModel
+        table.reloadData()
+        
+        //nameTextField.text = viewModel.name
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -97,12 +104,17 @@ class SearchViewController: UIViewController, SearchDisplayLogic
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return searchViewModel.cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        cell.textLabel?.text = "indexpath: \(indexPath)"
+        
+        let cellViewModel = searchViewModel.cells[indexPath.row]
+        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
+        cell.textLabel?.numberOfLines = 2
+        cell.imageView?.image = UIImage(named: "Image")
+        
         return cell
     }
     
@@ -113,5 +125,13 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         print(searchText)
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            let request = Search.Something.Request(searchTerm: searchText)
+            self.interactor?.doSomething(request: request)
+        })
+        
+        
     }
 }

@@ -14,18 +14,33 @@ import UIKit
 
 enum Search
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum Something
     {
+        struct Request
+        {
+            let searchTerm: String
+        }
+        struct Response
+        {
+            let searchResponse: SearchResponse?
+        }
+        struct ViewModel
+        {
+            let searchViewModel: SearchViewModel
+        }
     }
-    struct Response
-    {
+}
+
+
+struct SearchViewModel {
+    struct Cell {
+        var iconUrlString: String
+        var trackName: String
+        var collectionName: String
+        var artistName: String
     }
-    struct ViewModel
-    {
-    }
-  }
+    
+    var cells: [Cell]
 }

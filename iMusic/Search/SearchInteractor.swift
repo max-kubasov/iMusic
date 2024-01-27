@@ -14,28 +14,31 @@ import UIKit
 
 protocol SearchBusinessLogic
 {
-  func doSomething(request: Search.Something.Request)
+    func doSomething(request: Search.Something.Request)
 }
 
 protocol SearchDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class SearchInteractor: SearchBusinessLogic, SearchDataStore
 {
-  var presenter: SearchPresentationLogic?
-  var worker: SearchWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Search.Something.Request)
-  {
-    worker = SearchWorker()
-    worker?.doSomeWork()
+    var networkService = NetworkService()
+    var presenter: SearchPresentationLogic?
+    var worker: SearchWorker?
+    //var name: String = ""
     
-    let response = Search.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    func doSomething(request: Search.Something.Request)
+    {
+        
+        print("Interactor ---------------\(request.searchTerm)")
+        networkService.fetchTracks(searchText: request.searchTerm) { [weak self] searchResponse in
+            let response = Search.Something.Response.init(searchResponse: searchResponse)
+            self?.presenter?.presentSomething(response: response)
+        }
+        
+    }
 }

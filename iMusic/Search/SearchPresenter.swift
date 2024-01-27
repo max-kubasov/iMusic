@@ -14,18 +14,32 @@ import UIKit
 
 protocol SearchPresentationLogic
 {
-  func presentSomething(response: Search.Something.Response)
+    func presentSomething(response: Search.Something.Response)
 }
 
 class SearchPresenter: SearchPresentationLogic
 {
-  weak var viewController: SearchDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Search.Something.Response)
-  {
-    let viewModel = Search.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: SearchDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentSomething(response: Search.Something.Response) {
+        print("Presenter ----------")
+        
+        let cells = response.searchResponse?.results.map({ track in
+            cellViewModel(from: track)
+        }) ?? []
+        
+        let searchViewModel = SearchViewModel(cells: cells)
+        let viewModel = Search.Something.ViewModel.init(searchViewModel: searchViewModel)
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+    
+    private func cellViewModel(from track: Track) -> SearchViewModel.Cell {
+        
+        return SearchViewModel.Cell.init(iconUrlString: track.artworkUrl100 ?? "",
+                                         trackName: track.trackName ?? "",
+                                         collectionName: track.collectionName ?? "",
+                                         artistName: track.artistName)
+    }
 }
