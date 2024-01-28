@@ -27,8 +27,10 @@ class TrackDetailView: UIView {
     
     
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
+        
+        trackImageView.backgroundColor = .cyan
     }
     
     
