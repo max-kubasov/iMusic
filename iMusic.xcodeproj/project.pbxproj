@@ -30,6 +30,8 @@
 		50B7BDA72B652FEF00117B6E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDA62B652FEF00117B6E /* TrackCell.swift */; };
 		50B7BDAD2B656D7F00117B6E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 50B7BDAC2B656D7F00117B6E /* SDWebImage */; };
 		50B7BDB02B66323500117B6E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDAF2B66323500117B6E /* FooterView.swift */; };
+		50B7BDB32B66522400117B6E /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B7BDB22B66522400117B6E /* TrackDetailView.xib */; };
+		50B7BDB52B66524000117B6E /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDB42B66524000117B6E /* TrackDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		50B7BDA42B652FCD00117B6E /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		50B7BDA62B652FEF00117B6E /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		50B7BDAF2B66323500117B6E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		50B7BDB22B66522400117B6E /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
+		50B7BDB42B66524000117B6E /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		50B7BD902B62EE3C00117B6E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				50B7BDB12B6651FE00117B6E /* Track Detail View */,
 				50B7BDAE2B66322000117B6E /* Footer View */,
 				50B7BDA32B652FB900117B6E /* Cell */,
 				50B7BD9E2B63E34500117B6E /* SearchViewController.storyboard */,
@@ -163,6 +168,15 @@
 				50B7BDAF2B66323500117B6E /* FooterView.swift */,
 			);
 			path = "Footer View";
+			sourceTree = "<group>";
+		};
+		50B7BDB12B6651FE00117B6E /* Track Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				50B7BDB22B66522400117B6E /* TrackDetailView.xib */,
+				50B7BDB42B66524000117B6E /* TrackDetailView.swift */,
+			);
+			path = "Track Detail View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +249,7 @@
 				50B7BDA52B652FCD00117B6E /* TrackCell.xib in Resources */,
 				50B7BD782B6255A100117B6E /* Assets.xcassets in Resources */,
 				50B7BD762B62559C00117B6E /* Main.storyboard in Resources */,
+				50B7BDB32B66522400117B6E /* TrackDetailView.xib in Resources */,
 				50B7BD9F2B63E34500117B6E /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +276,7 @@
 				50B7BD9B2B62EF0100117B6E /* SearchModels.swift in Sources */,
 				50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */,
 				50B7BD982B62EF0100117B6E /* SearchPresenter.swift in Sources */,
+				50B7BDB52B66524000117B6E /* TrackDetailView.swift in Sources */,
 				50B7BD8F2B62EA8100117B6E /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
