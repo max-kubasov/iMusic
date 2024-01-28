@@ -12,9 +12,10 @@
 
 import UIKit
 
-protocol SearchDisplayLogic: class
+protocol SearchDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: Search.Something.ViewModel)
+    func startLoadingAnimation()
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic
@@ -28,6 +29,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     let searchController = UISearchController(searchResultsController: nil)
     private var searchViewModel = SearchViewModel.init(cells: [])
     private var timer: Timer?
+    
+    private lazy var footerView = FooterView()
     
     // MARK: Setup
     
@@ -79,7 +82,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic
         
         let nib = UINib(nibName: "TrackCell", bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
-        table.tableFooterView = UIView()
+        table.tableFooterView = footerView
     }
     
     // MARK: Do something
@@ -98,8 +101,13 @@ class SearchViewController: UIViewController, SearchDisplayLogic
         
         self.searchViewModel = viewModel.searchViewModel
         table.reloadData()
+        footerView.hideLoader()
         
         //nameTextField.text = viewModel.name
+    }
+    
+    func startLoadingAnimation() {
+        footerView.showLoader()
     }
 }
 
@@ -135,7 +143,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return searchViewModel.cells.count > 0 ? 0 : 250
     }

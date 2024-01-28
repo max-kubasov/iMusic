@@ -33,6 +33,8 @@ class SearchPresenter: SearchPresentationLogic
         let searchViewModel = SearchViewModel(cells: cells)
         let viewModel = Search.Something.ViewModel.init(searchViewModel: searchViewModel)
         viewController?.displaySomething(viewModel: viewModel)
+        
+        viewController?.startLoadingAnimation()
     }
     
     private func cellViewModel(from track: Track) -> SearchViewModel.Cell {

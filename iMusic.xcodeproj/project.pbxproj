@@ -29,6 +29,7 @@
 		50B7BDA52B652FCD00117B6E /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B7BDA42B652FCD00117B6E /* TrackCell.xib */; };
 		50B7BDA72B652FEF00117B6E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDA62B652FEF00117B6E /* TrackCell.swift */; };
 		50B7BDAD2B656D7F00117B6E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 50B7BDAC2B656D7F00117B6E /* SDWebImage */; };
+		50B7BDB02B66323500117B6E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BDAF2B66323500117B6E /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		50B7BDA02B63E71300117B6E /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		50B7BDA42B652FCD00117B6E /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		50B7BDA62B652FEF00117B6E /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		50B7BDAF2B66323500117B6E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		50B7BD902B62EE3C00117B6E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				50B7BDAE2B66322000117B6E /* Footer View */,
 				50B7BDA32B652FB900117B6E /* Cell */,
 				50B7BD9E2B63E34500117B6E /* SearchViewController.storyboard */,
 				50B7BD962B62EF0100117B6E /* SearchViewController.swift */,
@@ -152,6 +155,14 @@
 				50B7BD8C2B62B71A00117B6E /* SearchResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		50B7BDAE2B66322000117B6E /* Footer View */ = {
+			isa = PBXGroup;
+			children = (
+				50B7BDAF2B66323500117B6E /* FooterView.swift */,
+			);
+			path = "Footer View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 				50B7BD6F2B62559C00117B6E /* AppDelegate.swift in Sources */,
 				50B7BD8D2B62B71A00117B6E /* SearchResponse.swift in Sources */,
 				50B7BD9D2B62EF0100117B6E /* SearchInteractor.swift in Sources */,
+				50B7BDB02B66323500117B6E /* FooterView.swift in Sources */,
 				50B7BDA72B652FEF00117B6E /* TrackCell.swift in Sources */,
 				50B7BD832B6255FB00117B6E /* MainTabBarController.swift in Sources */,
 				50B7BD872B6259B800117B6E /* SearchMusicViewController.swift in Sources */,
