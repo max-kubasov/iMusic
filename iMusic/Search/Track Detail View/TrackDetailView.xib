@@ -90,9 +90,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpq-eQ-vni">
-                                    <rect key="frame" x="110" y="57" width="110" height="73"/>
+                                    <rect key="frame" x="110" y="58" width="110" height="71"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="play"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="pause"/>
                                     <connections>
                                         <action selector="playPauseAction:" destination="umj-jI-Tel" eventType="touchUpInside" id="aH2-WS-J1v"/>
                                     </connections>
@@ -162,6 +162,6 @@
         <image name="IconMax" width="17" height="17"/>
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
-        <image name="play" width="59" height="59"/>
+        <image name="pause" width="57" height="57"/>
     </resources>
 </document>
