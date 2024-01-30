@@ -138,6 +138,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         let trackDetailsView = Bundle.main.loadNibNamed("TrackDetailView", owner: self)?.first as! TrackDetailView
+        trackDetailsView.delegate = self
         trackDetailsView.set(viewModel: cellViewModel)
         window?.addSubview(trackDetailsView)
         
@@ -177,4 +178,42 @@ extension SearchViewController: UISearchBarDelegate {
         
         
     }
+}
+
+extension SearchViewController: TrackMovingDelegate {
+    
+    private func getTrack(isForward: Bool) -> SearchViewModel.Cell? {
+        guard let indexPath = table.indexPathForSelectedRow else { return nil }
+        table.deselectRow(at: indexPath, animated: true)
+        var nextIdexPath: IndexPath!
+        if isForward {
+            nextIdexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if nextIdexPath.row == searchViewModel.cells.count {
+                nextIdexPath.row = 0
+            }
+        } else {
+            nextIdexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            if nextIdexPath.row == -1 {
+                nextIdexPath.row = searchViewModel.cells.count - 1
+            }
+        }
+        
+        table.selectRow(at: nextIdexPath, animated: true, scrollPosition: .none)
+        let cellViewModel = searchViewModel.cells[nextIdexPath.row]
+        return cellViewModel
+    }
+    
+    
+    
+    func moveBackForPreviousTrack() -> SearchViewModel.Cell? {
+        print("Back---------->")
+        return getTrack(isForward: false)
+    }
+    
+    func moveForwardForPreviousTrack() -> SearchViewModel.Cell? {
+        print("Forward----------->")
+        return getTrack(isForward: true)
+    }
+    
+    
 }
