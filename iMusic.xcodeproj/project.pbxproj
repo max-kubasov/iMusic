@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		509129482B67C6FA005EA587 /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509129472B67C6FA005EA587 /* CMTime + Extension.swift */; };
+		5091294C2B6B610D005EA587 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091294B2B6B610D005EA587 /* Nib.swift */; };
 		50B7BD6F2B62559C00117B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD6E2B62559C00117B6E /* AppDelegate.swift */; };
 		50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD702B62559C00117B6E /* SceneDelegate.swift */; };
 		50B7BD732B62559C00117B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD722B62559C00117B6E /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		509129472B67C6FA005EA587 /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
+		5091294B2B6B610D005EA587 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		50B7BD6B2B62559C00117B6E /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B7BD6E2B62559C00117B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B7BD702B62559C00117B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				50B7BDA02B63E71300117B6E /* UIViewController + Storyboard.swift */,
 				509129472B67C6FA005EA587 /* CMTime + Extension.swift */,
+				5091294B2B6B610D005EA587 /* Nib.swift */,
 			);
 			name = Helpers;
 			path = ..;
@@ -272,6 +275,7 @@
 				50B7BDB02B66323500117B6E /* FooterView.swift in Sources */,
 				509129482B67C6FA005EA587 /* CMTime + Extension.swift in Sources */,
 				50B7BDA72B652FEF00117B6E /* TrackCell.swift in Sources */,
+				5091294C2B6B610D005EA587 /* Nib.swift in Sources */,
 				50B7BD832B6255FB00117B6E /* MainTabBarController.swift in Sources */,
 				50B7BD872B6259B800117B6E /* SearchMusicViewController.swift in Sources */,
 				50B7BD992B62EF0100117B6E /* SearchWorker.swift in Sources */,
