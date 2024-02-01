@@ -31,6 +31,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     private var timer: Timer?
     
     private lazy var footerView = FooterView()
+    weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     // MARK: Setup
     
@@ -136,11 +137,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         print("indexPath: \(indexPath.row)")
         
-        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-        let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
-        trackDetailsView.delegate = self
-        trackDetailsView.set(viewModel: cellViewModel)
-        window?.addSubview(trackDetailsView)
+        self.tabBarDelegate?.maximizeTrackDetailControler(viewModel: cellViewModel)
         
     }
     
