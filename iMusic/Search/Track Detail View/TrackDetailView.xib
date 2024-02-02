@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +14,73 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YD-SM-pmb">
+                    <rect key="frame" x="0.0" y="47" width="390" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6by-hB-agp">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="6KP-TA-bcX"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="C9e-D1-SGq">
+                            <rect key="frame" x="8" y="8" width="374" height="48"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ckn-7f-25s">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="Ipy-6j-7v9"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAy-iG-NNu">
+                                    <rect key="frame" x="64" y="0.0" width="186" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-Gw-xfl">
+                                    <rect key="frame" x="266" y="0.0" width="44" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="32y-l7-jhM"/>
+                                        <constraint firstAttribute="width" constant="44" id="AR9-gI-ee6"/>
+                                        <constraint firstAttribute="height" constant="20" id="uP3-dh-7rZ"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="labelColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="pause"/>
+                                    <connections>
+                                        <action selector="playPauseAction:" destination="umj-jI-Tel" eventType="touchUpInside" id="aTn-iH-pnn"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj6-Yf-hbm">
+                                    <rect key="frame" x="326" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="XGy-mz-4kE"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="labelColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="Right"/>
+                                    <connections>
+                                        <action selector="nextTrack:" destination="umj-jI-Tel" eventType="touchUpInside" id="sYm-9E-ffB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="6by-hB-agp" firstAttribute="leading" secondItem="9YD-SM-pmb" secondAttribute="leading" id="0cD-Ce-AgP"/>
+                        <constraint firstItem="6by-hB-agp" firstAttribute="top" secondItem="9YD-SM-pmb" secondAttribute="top" id="Fho-VI-B76"/>
+                        <constraint firstAttribute="trailing" secondItem="6by-hB-agp" secondAttribute="trailing" id="NJh-1f-bGK"/>
+                        <constraint firstAttribute="height" constant="64" id="PXF-9t-rPT"/>
+                        <constraint firstItem="C9e-D1-SGq" firstAttribute="leading" secondItem="9YD-SM-pmb" secondAttribute="leading" constant="8" id="Spt-eA-bLO"/>
+                        <constraint firstAttribute="trailing" secondItem="C9e-D1-SGq" secondAttribute="trailing" constant="8" id="arI-k1-jGS"/>
+                        <constraint firstItem="C9e-D1-SGq" firstAttribute="top" secondItem="9YD-SM-pmb" secondAttribute="top" constant="8" id="dRz-bZ-qYO"/>
+                        <constraint firstAttribute="bottom" secondItem="6by-hB-agp" secondAttribute="bottom" id="odh-b2-hri"/>
+                        <constraint firstAttribute="bottom" secondItem="C9e-D1-SGq" secondAttribute="bottom" constant="8" id="ya6-Ez-Iwg"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDB-Of-HnN">
                     <rect key="frame" x="30" y="47" width="330" height="733"/>
                     <subviews>
@@ -138,9 +206,12 @@
             <viewLayoutGuide key="safeArea" id="piv-tr-jjp"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="piv-tr-jjp" firstAttribute="trailing" secondItem="9YD-SM-pmb" secondAttribute="trailing" id="13O-mS-kdr"/>
                 <constraint firstItem="piv-tr-jjp" firstAttribute="bottom" secondItem="JDB-Of-HnN" secondAttribute="bottom" constant="30" id="6iN-wh-r4w"/>
                 <constraint firstItem="piv-tr-jjp" firstAttribute="trailing" secondItem="JDB-Of-HnN" secondAttribute="trailing" constant="30" id="Fgh-Tn-ex6"/>
+                <constraint firstItem="9YD-SM-pmb" firstAttribute="leading" secondItem="piv-tr-jjp" secondAttribute="leading" id="k4r-ST-7hF"/>
                 <constraint firstItem="JDB-Of-HnN" firstAttribute="top" secondItem="piv-tr-jjp" secondAttribute="top" id="kiI-kI-Yqy"/>
+                <constraint firstItem="9YD-SM-pmb" firstAttribute="top" secondItem="piv-tr-jjp" secondAttribute="top" id="pj1-4E-ioY"/>
                 <constraint firstItem="JDB-Of-HnN" firstAttribute="leading" secondItem="piv-tr-jjp" secondAttribute="leading" constant="30" id="sKH-Ct-BEK"/>
             </constraints>
             <connections>
@@ -148,6 +219,12 @@
                 <outlet property="currentTimeLabel" destination="ziR-Hu-7QC" id="emS-ER-4xU"/>
                 <outlet property="currentTimeSlider" destination="WS1-Wh-API" id="bjx-v1-tRu"/>
                 <outlet property="durationLabel" destination="6B5-fg-UJf" id="HN7-Cb-jeV"/>
+                <outlet property="maximizeStackView" destination="JDB-Of-HnN" id="7Rj-p8-KGS"/>
+                <outlet property="miniGoForwardButton" destination="Tj6-Yf-hbm" id="UZy-Hu-zrS"/>
+                <outlet property="miniPlayPauseButton" destination="TQp-Gw-xfl" id="zzg-HK-hzT"/>
+                <outlet property="miniTrackImageView" destination="Ckn-7f-25s" id="EoP-3i-ILD"/>
+                <outlet property="miniTrackTitleLabel" destination="IAy-iG-NNu" id="WFl-lA-A6B"/>
+                <outlet property="miniTrackView" destination="9YD-SM-pmb" id="Zfs-ES-fdh"/>
                 <outlet property="playPauseButton" destination="bpq-eQ-vni" id="xqc-pW-6pt"/>
                 <outlet property="trackImageView" destination="4nv-Xq-lLB" id="Lki-pM-13i"/>
                 <outlet property="trackTitleLabel" destination="G5B-1A-LLs" id="mtC-TE-Nyf"/>
@@ -160,8 +237,18 @@
         <image name="Drag Down" width="37" height="12"/>
         <image name="Icon Min" width="7" height="12"/>
         <image name="IconMax" width="17" height="17"/>
+        <image name="Image" width="163" height="163"/>
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
         <image name="pause" width="57" height="57"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
