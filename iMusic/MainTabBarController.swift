@@ -52,15 +52,16 @@ class MainTabBarController: UITabBarController {
     
     private func setupTrackDetailView() {
         
-        print("Setup -------- track detail view")
+        print("Setup ----------- track detail view")
         
+        trackDetailView.translatesAutoresizingMaskIntoConstraints = false
         trackDetailView.tabBarDelegate = self
         trackDetailView.delegate = searchVC
         view.insertSubview(trackDetailView, belowSubview: tabBar)
         
-        trackDetailView.translatesAutoresizingMaskIntoConstraints = false
         
-        maximizedTopAnchorConstraint = trackDetailView.topAnchor.constraint(equalTo: view.topAnchor)
+        
+        maximizedTopAnchorConstraint = trackDetailView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height)
         minimazedTopAnchorConstraint = trackDetailView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -64)
 
         maximizedTopAnchorConstraint.isActive = true
