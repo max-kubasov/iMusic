@@ -70,6 +70,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic
         //doSomething()
         setupSearchBar()
         setupTableView()
+        
+        searchBar(searchController.searchBar, textDidChange: "billie")
     }
     
     private func setupSearchBar() {

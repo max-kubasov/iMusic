@@ -34,17 +34,19 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAy-iG-NNu">
-                                    <rect key="frame" x="64" y="0.0" width="186" height="48"/>
+                                    <rect key="frame" x="64" y="0.0" width="215" height="48"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-Gw-xfl">
-                                    <rect key="frame" x="266" y="0.0" width="44" height="48"/>
+                                    <rect key="frame" x="295" y="0.0" width="15" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="32y-l7-jhM"/>
-                                        <constraint firstAttribute="width" constant="44" id="AR9-gI-ee6"/>
-                                        <constraint firstAttribute="height" constant="20" id="uP3-dh-7rZ"/>
+                                        <constraint firstAttribute="width" constant="15" id="AR9-gI-ee6"/>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="15" id="BdW-GZ-ZgF"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="VRY-2P-yx9"/>
+                                        <constraint firstAttribute="height" constant="15" id="uP3-dh-7rZ"/>
                                     </constraints>
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <state key="normal" title="Button"/>
