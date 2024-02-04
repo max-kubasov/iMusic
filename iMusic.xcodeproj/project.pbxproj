@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		509129482B67C6FA005EA587 /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509129472B67C6FA005EA587 /* CMTime + Extension.swift */; };
 		5091294C2B6B610D005EA587 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091294B2B6B610D005EA587 /* Nib.swift */; };
+		5091294E2B6F9257005EA587 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091294D2B6F9257005EA587 /* Library.swift */; };
 		50B7BD6F2B62559C00117B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD6E2B62559C00117B6E /* AppDelegate.swift */; };
 		50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD702B62559C00117B6E /* SceneDelegate.swift */; };
 		50B7BD732B62559C00117B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD722B62559C00117B6E /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		509129472B67C6FA005EA587 /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
 		5091294B2B6B610D005EA587 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
+		5091294D2B6F9257005EA587 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		50B7BD6B2B62559C00117B6E /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B7BD6E2B62559C00117B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B7BD702B62559C00117B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,12 +100,11 @@
 		50B7BD6D2B62559C00117B6E /* iMusic */ = {
 			isa = PBXGroup;
 			children = (
-				50B7BD912B62EE9B00117B6E /* Services */,
-				50B7BD902B62EE3C00117B6E /* Search */,
 				50B7BD6E2B62559C00117B6E /* AppDelegate.swift */,
 				50B7BD702B62559C00117B6E /* SceneDelegate.swift */,
+				50B7BD912B62EE9B00117B6E /* Services */,
+				50B7BD902B62EE3C00117B6E /* Search */,
 				50B7BD722B62559C00117B6E /* ViewController.swift */,
-				50B7BD822B6255FB00117B6E /* MainTabBarController.swift */,
 				50B7BD862B6259B800117B6E /* SearchMusicViewController.swift */,
 				50B7BDA22B63E72200117B6E /* Helpers */,
 				50B7BD742B62559C00117B6E /* Main.storyboard */,
@@ -136,6 +137,8 @@
 			children = (
 				50B7BDAA2B65517100117B6E /* Models */,
 				50B7BD8E2B62EA8100117B6E /* NetworkService.swift */,
+				50B7BD822B6255FB00117B6E /* MainTabBarController.swift */,
+				5091294D2B6F9257005EA587 /* Library.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				50B7BD9B2B62EF0100117B6E /* SearchModels.swift in Sources */,
 				50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */,
 				50B7BD982B62EF0100117B6E /* SearchPresenter.swift in Sources */,
+				5091294E2B6F9257005EA587 /* Library.swift in Sources */,
 				50B7BDB52B66524000117B6E /* TrackDetailView.swift in Sources */,
 				50B7BD8F2B62EA8100117B6E /* NetworkService.swift in Sources */,
 			);
