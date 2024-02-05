@@ -37,10 +37,12 @@ class MainTabBarController: UITabBarController {
         
         let library = Library()
         let hostVC = UIHostingController(rootView: library)
+        hostVC.tabBarItem.image = UIImage(named: "library")
+        hostVC.tabBarItem.title = "Library"
         
         viewControllers = [
-            generateViewController(rootViewController: searchVC, image: "search", title: "Search"),
-            generateViewController(rootViewController: hostVC, image: "library", title: "Library")
+            hostVC,
+            generateViewController(rootViewController: searchVC, image: "search", title: "Search")
         ]
     }
     
