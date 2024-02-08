@@ -10,6 +10,7 @@
 		509129482B67C6FA005EA587 /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509129472B67C6FA005EA587 /* CMTime + Extension.swift */; };
 		5091294C2B6B610D005EA587 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091294B2B6B610D005EA587 /* Nib.swift */; };
 		5091294E2B6F9257005EA587 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091294D2B6F9257005EA587 /* Library.swift */; };
+		509129542B73AE50005EA587 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509129532B73AE50005EA587 /* UserDefaults.swift */; };
 		50B7BD6F2B62559C00117B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD6E2B62559C00117B6E /* AppDelegate.swift */; };
 		50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD702B62559C00117B6E /* SceneDelegate.swift */; };
 		50B7BD732B62559C00117B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7BD722B62559C00117B6E /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		509129472B67C6FA005EA587 /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
 		5091294B2B6B610D005EA587 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		5091294D2B6F9257005EA587 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		509129532B73AE50005EA587 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		50B7BD6B2B62559C00117B6E /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B7BD6E2B62559C00117B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B7BD702B62559C00117B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				50B7BDA42B652FCD00117B6E /* TrackCell.xib */,
 				50B7BDA62B652FEF00117B6E /* TrackCell.swift */,
+				509129532B73AE50005EA587 /* UserDefaults.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				50B7BD872B6259B800117B6E /* SearchMusicViewController.swift in Sources */,
 				50B7BD992B62EF0100117B6E /* SearchWorker.swift in Sources */,
 				50B7BD9C2B62EF0100117B6E /* SearchViewController.swift in Sources */,
+				509129542B73AE50005EA587 /* UserDefaults.swift in Sources */,
 				50B7BD9A2B62EF0100117B6E /* SearchRouter.swift in Sources */,
 				50B7BD9B2B62EF0100117B6E /* SearchModels.swift in Sources */,
 				50B7BD712B62559C00117B6E /* SceneDelegate.swift in Sources */,
