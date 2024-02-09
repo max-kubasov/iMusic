@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Library: View {
     
-    var tracks = UserDefaults.standard.savedTracks()
+    @State var tracks = UserDefaults.standard.savedTracks()
+    @State private var showingAlert = false
+    @State private var track: SearchViewModel.Cell!
     
     var body: some View {
         NavigationView {
@@ -40,13 +42,48 @@ struct Library: View {
                 
                 Divider().padding()
                 
-                List(tracks) { track in
-                    LibraryCell(cell: track)
+                List {
+                    ForEach(tracks) { track in
+                        LibraryCell(cell: track)
+                            .gesture(LongPressGesture().onEnded({ _ in
+                                print("PRESSED!------------")
+                                self.track = track
+                                self.showingAlert = true
+                            }))
+                    }
+                    .onDelete(perform: delete)
                 }
             }
+            .actionSheet(isPresented: $showingAlert, content: {
+                ActionSheet(title: Text("Are you sure you want to delete this tarck? "), buttons: [.destructive(Text("Delete"), action: {
+                    print("Deleting \(self.track.trackName)")
+                    self.delete(track: self.track)
+                }), .cancel()
+                                                                                                  ])
+            })
             .navigationTitle("Library")
         }
         
+    }
+     
+    func delete(at offsets: IndexSet) {
+        tracks.remove(atOffsets: offsets)
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
+        }
+    }
+    
+    func delete(track: SearchViewModel.Cell) {
+        let index = tracks.firstIndex(of: track)
+        guard let myIndex = index else { return }
+        tracks.remove(at: myIndex)
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: tracks, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
+        }
     }
 }
 
