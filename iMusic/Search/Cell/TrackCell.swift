@@ -24,7 +24,7 @@ class TrackCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
-    
+    @IBOutlet weak var addTrackOutlet: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +41,17 @@ class TrackCell: UITableViewCell {
     func set(viewModel: SearchViewModel.Cell) {
         
         self.cell = viewModel
+        
+        let savedTracks = UserDefaults.standard.savedTracks()
+        let hasFavotite = savedTracks.firstIndex(where: {
+            $0.trackName == self.cell?.trackName && $0.artistName == self.cell?.artistName
+        }) != nil
+        if hasFavotite {
+            addTrackOutlet.isHidden = true
+        } else {
+            addTrackOutlet.isHidden = false
+        }
+        
         trackNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         collectionNameLabel.text = viewModel.collectionName
@@ -55,6 +66,7 @@ class TrackCell: UITableViewCell {
         
         let defaults = UserDefaults.standard
         guard let cell = cell else { return }
+        addTrackOutlet.isHidden = true
         var listOfTracks = defaults.savedTracks()
         
         listOfTracks.append(cell)
@@ -62,19 +74,6 @@ class TrackCell: UITableViewCell {
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
             print("SUCCESS!!!!!!!")
             defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
-        }
-    }
-    
-    @IBAction func showInfoAction(_ sender: Any) {
-        print("3333")
-        let defaults = UserDefaults.standard
-        
-        if let savedTracks = defaults.object(forKey: UserDefaults.favouriteTrackKey) as? Data {
-            if let decodedTrack = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTracks) as? [SearchViewModel.Cell] {
-                decodedTrack.map { (track) in
-                    print(track.trackName)
-                }
-            }
         }
     }
     
