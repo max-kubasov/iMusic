@@ -13,6 +13,8 @@ struct Library: View {
     @State private var showingAlert = false
     @State private var track: SearchViewModel.Cell!
     
+    var tabBarDelegate: MainTabBarControllerDelegate?
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -45,11 +47,17 @@ struct Library: View {
                 List {
                     ForEach(tracks) { track in
                         LibraryCell(cell: track)
-                            .gesture(LongPressGesture().onEnded({ _ in
-                                print("PRESSED!------------")
-                                self.track = track
-                                self.showingAlert = true
-                            }))
+                            .gesture(LongPressGesture()
+                                .onEnded({ _ in
+                                    print("PRESSED!------------")
+                                    self.track = track
+                                    self.showingAlert = true
+                                })
+                                    .simultaneously(with: TapGesture()
+                                        .onEnded({ _ in
+                                            self.track = track
+                                            self.tabBarDelegate?.maximizeTrackDetailControler(viewModel: self.track )
+                                        })))
                     }
                     .onDelete(perform: delete)
                 }
