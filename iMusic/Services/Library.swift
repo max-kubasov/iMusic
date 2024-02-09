@@ -21,7 +21,8 @@ struct Library: View {
                 GeometryReader { geometry in
                     HStack {
                         Button(action: {
-                            print("12345")
+                            self.track = self.tracks[0]
+                            self.tabBarDelegate?.maximizeTrackDetailControler(viewModel: self.track)
                         }, label: {
                             Image(systemName: "play.fill")
                                 .frame(width: geometry.size.width / 2 - 10, height: 50)
@@ -31,7 +32,7 @@ struct Library: View {
                         })
                         
                         Button(action: {
-                            print("54321")
+                            self.tracks = UserDefaults.standard.savedTracks()
                         }, label: {
                             Image(systemName: "arrow.2.circlepath")
                                 .frame(width: geometry.size.width / 2 - 10, height: 50)
