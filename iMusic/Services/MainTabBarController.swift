@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 
-protocol MainTabBarControllerDelegate: class {
+protocol MainTabBarControllerDelegate: AnyObject {
     func minimizeTrackDetailController()
     func maximizeTrackDetailControler(viewModel: SearchViewModel.Cell?)
 }
