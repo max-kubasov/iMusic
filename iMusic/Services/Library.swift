@@ -29,7 +29,7 @@ struct Library: View {
                                 .flatMap { $0.windows }
                                 .last { $0.isKeyWindow }
                             
-                            print("----------\(keyWindow)--------PlayButton")
+                            print("----------PlayButton--------")
                             
                             let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
                             
@@ -78,7 +78,7 @@ struct Library: View {
                                                 .flatMap { $0.windows }
                                                 .last { $0.isKeyWindow }
                                             
-                                            print("----------\(keyWindow)--------TapGesture")
+                                            print("----------TapGesture--------")
                                             
                                             let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
                                             
@@ -163,13 +163,29 @@ struct Library_Previews: PreviewProvider {
 extension Library: TrackMovingDelegate {
     
     func moveBackForPreviousTrack() -> SearchViewModel.Cell? {
-        print("123")
-        return nil
+        let index = tracks.firstIndex(of: track)
+        guard let myIndex = index else { return nil }
+        var nextTrack: SearchViewModel.Cell
+        if myIndex - 1 == -1 {
+            nextTrack = tracks[tracks.count - 1]
+        } else {
+            nextTrack = tracks[myIndex - 1]
+        }
+        self.track = nextTrack
+        return nextTrack
     }
     
     func moveForwardForPreviousTrack() -> SearchViewModel.Cell? {
-        print("321")
-        return nil
+        let index = tracks.firstIndex(of: track)
+        guard let myIndex = index else { return nil }
+        var nextTrack: SearchViewModel.Cell
+        if myIndex + 1 == tracks.count {
+            nextTrack = tracks[0]
+        } else {
+            nextTrack = tracks[myIndex + 1]
+        }
+        self.track = nextTrack
+        return nextTrack
     }
     
     

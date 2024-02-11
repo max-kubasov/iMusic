@@ -84,7 +84,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic
             .flatMap { $0.windows }
             .last { $0.isKeyWindow }
         
-        print("----------\(keyWindow)--------Open Search View Controller")
+        print("----------Open Search View Controller--------")
         
         let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
         
@@ -222,7 +222,7 @@ extension SearchViewController: TrackMovingDelegate {
     
     
     func moveBackForPreviousTrack() -> SearchViewModel.Cell? {
-        print("Back---------->")
+        print("<-------------Back")
         return getTrack(isForward: false)
     }
     
