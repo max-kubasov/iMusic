@@ -21,6 +21,20 @@ struct Library: View {
                 GeometryReader { geometry in
                     HStack {
                         Button(action: {
+                            
+                            let keyWindow = UIApplication
+                                .shared
+                                .connectedScenes
+                                .compactMap { $0 as? UIWindowScene }
+                                .flatMap { $0.windows }
+                                .last { $0.isKeyWindow }
+                            
+                            print("----------\(keyWindow)--------PlayButton")
+                            
+                            let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
+                            
+                            tabBarVC?.trackDetailView.delegate = self
+                            
                             self.track = self.tracks[0]
                             self.tabBarDelegate?.maximizeTrackDetailControler(viewModel: self.track)
                         }, label: {
@@ -64,7 +78,7 @@ struct Library: View {
                                                 .flatMap { $0.windows }
                                                 .last { $0.isKeyWindow }
                                             
-                                            print("----------\(keyWindow)")
+                                            print("----------\(keyWindow)--------TapGesture")
                                             
                                             let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
                                             

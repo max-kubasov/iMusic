@@ -74,6 +74,23 @@ class SearchViewController: UIViewController, SearchDisplayLogic
         searchBar(searchController.searchBar, textDidChange: "billie")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let keyWindow = UIApplication
+            .shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .last { $0.isKeyWindow }
+        
+        print("----------\(keyWindow)--------Open Search View Controller")
+        
+        let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
+        
+        tabBarVC?.trackDetailView.delegate = self
+    }
+    
     private func setupSearchBar() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
